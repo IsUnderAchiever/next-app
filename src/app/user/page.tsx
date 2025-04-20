@@ -1,9 +1,9 @@
 'use client'
-import {message, Space, Spin, Table, Tag} from 'antd';
-import {useEffect, useState} from 'react';
+import { message, Space, Spin, Table, Tag } from 'antd';
+import { useEffect, useState } from 'react';
 import Create from './Create';
 import Edit from './Edit';
-import type {TableProps} from 'antd';
+import type { TableProps } from 'antd';
 
 export interface DataType {
     id: number;
@@ -141,7 +141,7 @@ function User() {
             title: '标签',
             key: 'tags',
             dataIndex: 'tags',
-            render: (_, {tags}) => (
+            render: (_, { tags }) => (
                 <>
                     {tags.map((tag) => {
                         return (
@@ -200,9 +200,9 @@ function User() {
     return (
         <div>
             {userData.length > 0 ? (
-                <Table<DataType> columns={columns} dataSource={userData} rowKey="id"/>
+                <Table<DataType> columns={columns} dataSource={userData} rowKey="id" />
             ) : (
-                <Spin/>
+                <Spin />
             )}
             <Create
                 open={createVisible}
